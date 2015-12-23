@@ -1,7 +1,16 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
+from django.shortcuts import render
+
+from .models import *
 
 def index(request):
-	return HttpResponse("Woo at the blog index.")
+	post_list = Post.objects.order_by('date_time')
+	context = {'post_list':post_list}
+	return render(request, 'blog/index.html', context)
 
-def addComment(request, post_id):
-	return HttpResponse("You are adding a comment to post %s" % post_id) 
+def detail(request, post_id):
+	try:
+		post = Post.objects.get(pk=post_id)
+	except Post.DoesNotExist:
+		raise Http404("Post does not exist")
+	return HttpResponse("You are viewing post %s" % post_id) 
