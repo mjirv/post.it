@@ -4,7 +4,7 @@ from django.shortcuts import render
 from .models import *
 
 def index(request):
-	post_list = Post.objects.order_by('date_time')
+	post_list = Post.objects.order_by('date_time').reverse()
 	context = {'post_list':post_list}
 	return render(request, 'blog/index.html', context)
 

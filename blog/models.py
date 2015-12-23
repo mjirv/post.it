@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 class Comment(models.Model):
 	date_time = models.DateTimeField('date commented')
@@ -12,9 +13,9 @@ class Comment(models.Model):
 
 
 class Post(models.Model):
-	date_time = models.DateTimeField('date published')
 	title = models.CharField(max_length=200)
-	content = models.TextField()
+	date_time = models.DateTimeField('date published')
+	content = HTMLField()
 	comments = models.ManyToManyField('Comment', blank=True)
 
 	def __str__(self):
