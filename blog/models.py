@@ -11,7 +11,6 @@ class Comment(models.Model):
 	def __str__(self):
 		return [self.post, self.author, self.content[:50]]
 
-
 class Post(models.Model):
 	title = models.CharField(max_length=200)
 	date_time = models.DateTimeField('date published')

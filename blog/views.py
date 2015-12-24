@@ -3,9 +3,11 @@ from django.shortcuts import render
 
 from .models import *
 
+siteTitle = "Michael J. Irvine"
+
 def index(request):
 	post_list = Post.objects.order_by('date_time').reverse()
-	context = {'post_list':post_list}
+	context = {'post_list':post_list, 'site_title':siteTitle}
 	return render(request, 'blog/index.html', context)
 
 def detail(request, post_id):

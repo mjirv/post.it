@@ -24,3 +24,5 @@ urlpatterns = [
 	url(r'^blog/', include('blog.urls')),
     url(r'^admin/', admin.site.urls),
 ]
+
+admin.site.site_header = 'My blog'
