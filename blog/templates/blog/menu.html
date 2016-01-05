@@ -1,0 +1,9 @@
+{% if menu %}
+	<ul class="menu">
+	<li class="menuItem"><a href='/blog'>Home</a></li>
+	{% for site in menu %}
+		<li class="menuItem"><a href='/blog/static/{{site.id}}'>{{site.title}}</a></li>
+	{% endfor %}
+	</ul>
+	<hr />
+{% endif %}

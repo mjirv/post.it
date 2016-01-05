@@ -1,0 +1,31 @@
+{% load staticfiles %}
+
+<html>
+<head>
+	<meta
+	charset="utf-8"><meta
+	name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{site_title}} - {{page.title}}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+</head>
+
+<body>
+	<header><h1 class="header">{{site_title}}</h1></header>
+
+	{% if menu %}
+		<ul class="menu">
+		<li class="menuItem"><a href='/blog'>Home</a></li>
+		{% for site in menu %}
+			<li class="menuItem"><a href='/blog/static/{{site.id}}'>{{site.title}}</a></li>
+		{% endfor %}
+		</ul>
+		<hr />
+	{% endif %}
+
+	<h1>{{page.title}}</h1>
+
+	<div>
+	{{page.content|safe}}
+	</div>
+</body>
+</html>
