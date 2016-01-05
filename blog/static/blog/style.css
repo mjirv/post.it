@@ -36,3 +36,11 @@ h1.header {
 a.postTitle {
 	color: black;
 }
+
+.alignRight {
+	float: right;
+}
+
+.alignLeft {
+	float: left;
+}

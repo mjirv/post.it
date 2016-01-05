@@ -12,11 +12,20 @@ def index(request):
 	return render(request, 'blog/index.html', context)
 
 def detail(request, post_id):
+	DOESNOTEXIST = -5000
 	try:
 		post = Post.objects.get(pk=post_id)
 	except Post.DoesNotExist:
 		raise Http404("Post does not exist")
-	context = {'site_title':siteTitle, 'menu':page_list, 'post':post}
+	try: 
+		post_next = post.get_next_by_date_time().id
+	except Post.DoesNotExist:
+		post_next = DOESNOTEXIST
+	try:
+		post_prev = post.get_previous_by_date_time().id
+	except Post.DoesNotExist:
+		post_prev = DOESNOTEXIST
+	context = {'site_title':siteTitle, 'menu':page_list, 'post':post, 'next':post_next, 'prev':post_prev, 'DOESNOTEXIST':DOESNOTEXIST}
 	return render(request, 'blog/post.html', context)
 
 def static(request, page_id):
