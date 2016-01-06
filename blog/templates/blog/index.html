@@ -13,21 +13,16 @@
 <body>
 	<header><h1 class="header">{{site_title}}</h1></header>
 
-	{% block js %}
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="{{ STATIC_URL }}el-pagination/js/el-pagination.js"></script>
-    <script>$.endlessPaginate({paginateOnScroll: true});</script>
-	{% endblock %}
-
 	{% include "blog/menu.html" %}
 
 	{% if post_list %}
 		<div>
-		{% lazy_paginate post_list %}
-		{% for post in post_list %}
-			{% include "blog/postDetail.html" %}
-		{% endfor %}
-		<p align="center">{% show_pages %}</p>
+			{% paginate post_list %}
+			{% for post in post_list %}
+				{% include "blog/postDetail.html" %}
+			{% endfor %}
+
+			<p style="text-align: center;">{% show_pages %}</p>
 		</div>
 
 	{% else %}

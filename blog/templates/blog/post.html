@@ -17,11 +17,11 @@
 	<div>
 	{% include "blog/postDetail.html" %}
 	<div style="clear: both;">
-		{% if next != DOESNOTEXIST %}
-			<p class="alignLeft"><a href="/blog/post/{{next}}">next</a></p>
+		{% if next %}
+			<p class="alignLeft"><a href="/blog/post/{{next.id}}">← {{next.title}}</a></p>
 		{% endif %}
-		{% if prev != DOESNOTEXIST %}
-			<p class="alignRight"><a href="/blog/post/{{prev}}">prev</a></p>
+		{% if prev %}
+			<p class="alignRight"><a href="/blog/post/{{prev.id}}">{{prev.title}} →</a></p>
 		{% endif %}
 	</div>
 	</div>
