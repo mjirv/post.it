@@ -129,6 +129,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATUC_ROOT = os.path.join(BASE_DIR, 'static')
 
+STATICFILES_DIRS = (
+                os.path.join(PROJECT_DIR,'staticfiles'), 
+)
+
 # TinyMCE Settings
 TINYMCE_DEFAULT_CONFIG = {
     'plugins': "table,spellchecker,paste,searchreplace",
