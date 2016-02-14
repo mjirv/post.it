@@ -127,7 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-STATUC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATUC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # TinyMCE Settings
 TINYMCE_DEFAULT_CONFIG = {
