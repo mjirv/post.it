@@ -17,7 +17,7 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.',
+        'ENGINE': 'postgresql_psycopg2',
         'NAME': os.path.join(PROJECT_ROOT, ''),
 	}
 }
