@@ -3,3 +3,4 @@ django-tinymce==2.2.0
 django-el-pagination==2.1.1
 django-filebrowser==3.6.1
 whitenoise==3.2.2
+gunicorn=19.6.0
