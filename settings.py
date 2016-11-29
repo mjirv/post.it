@@ -18,6 +18,6 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.',
-        'NAME': os.path.join(BASE_DIR, ''),
+        'NAME': os.path.join(PROJECT_ROOT, ''),
 	}
 }
