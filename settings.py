@@ -15,8 +15,12 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-import dj_database_url
-DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.path.join(PROJECT_ROOT, ''),
+    }
+}
 
 ROOT_URLCONF = 'blog.urls'
 
