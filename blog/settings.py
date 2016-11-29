@@ -12,3 +12,6 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'blog/static'),
 )
 SECRET_KEY = os.environ["SECRET_KEY"]
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
