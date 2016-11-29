@@ -22,4 +22,4 @@ DATABASES = {
 	}
 }
 
-ROOT_URLCONF - 'blog.urls'
+ROOT_URLCONF = 'blog.urls'
