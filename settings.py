@@ -23,3 +23,5 @@ DATABASES = {
 }
 
 ROOT_URLCONF = 'blog.urls'
+
+INSTALLED_APPS = ['blog']
