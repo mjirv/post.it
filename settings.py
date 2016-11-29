@@ -21,3 +21,5 @@ DATABASES = {
         'NAME': os.path.join(PROJECT_ROOT, ''),
 	}
 }
+
+ROOT_URLCONF - 'blog.urls'
