@@ -15,3 +15,9 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.',
+        'NAME': os.path.join(BASE_DIR, ''),
+	}
+}
