@@ -16,6 +16,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 import dj_database_url
+DATABASES = {}
 DATABASES['default'] = dj_database_url.config()
 
 ROOT_URLCONF = 'blog.urls'
