@@ -41,3 +41,5 @@ LOGGING = {
         },
     },
 }
+
+ALLOWED_HOSTS = 'test-blog-mjirv.herokuapp.com'
