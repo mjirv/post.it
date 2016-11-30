@@ -24,7 +24,7 @@ DATABASES = {
 
 ROOT_URLCONF = 'blog.urls'
 
-INSTALLED_APPS = ['blog']
+INSTALLED_APPS = ['blog', 'el_pagination']
 
 LOGGING = {
     'version': 1,
